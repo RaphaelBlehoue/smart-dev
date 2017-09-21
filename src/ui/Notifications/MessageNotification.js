@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class MessageNotification extends Component {
-
-    render() {
-        return (
+const MessageNotification = () => (
             <li className="dropdown">
                 <a className="dropdown-toggle" data-toggle="dropdown">
                     <i className="icon-bubbles4"/>
@@ -22,7 +19,7 @@ export default class MessageNotification extends Component {
                     <ul className="media-list dropdown-content-body">
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src={`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">5</span>
                             </div>
 
@@ -36,7 +33,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -51,7 +48,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -66,7 +63,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -81,7 +78,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -96,7 +93,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -111,7 +108,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -126,7 +123,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -141,7 +138,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -156,7 +153,7 @@ export default class MessageNotification extends Component {
                         </li>
                         <li className="media">
                             <div className="media-left">
-                                <img src= {process.env.PUBLIC_URL + 'assets/images/placeholder.jpg'} className="img-circle img-sm" alt="" />
+                                <img src= {`${process.env.PUBLIC_URL}assets/images/placeholder.jpg`} className="img-circle img-sm" alt="" />
                                 <span className="badge bg-danger-400 media-badge">4</span>
                             </div>
 
@@ -177,5 +174,5 @@ export default class MessageNotification extends Component {
                 </div>
             </li>
         );
-    }
-}
+
+export default MessageNotification;

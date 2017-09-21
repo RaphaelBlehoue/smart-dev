@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import Navbar from '../ui/Navbar';
 import Footer from '../ui/Footer';
 
@@ -9,4 +9,9 @@ const Main = props => (
         <Footer />
     </div>
 );
+
+Main.propTypes = {
+    children: React.PropTypes.isRequired
+};
+
 export default Main;
