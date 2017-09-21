@@ -1,11 +1,8 @@
-const initialState = {
-    visibilityFilter: '',
-    todos: []
-};
+import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 
-export default function todoApp (state = initialState , action){
-    if (typeof state === 'undefined') {
-        return initialState
-    }
-    return state
-}
+const rootReducer = combineReducers({
+    form: formReducer
+});
+
+export default rootReducer;
