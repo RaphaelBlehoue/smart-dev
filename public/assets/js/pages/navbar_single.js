@@ -60,7 +60,7 @@ $(function() {
 
             // Toggle necessary body and navbar classes
             $('body').find('#navbar-main').addClass('navbar-fixed-bottom');
-            $('body').addClass('navbar-bottom');
+            $('.footer').hide();
         }
         else {
 
@@ -69,7 +69,7 @@ $(function() {
 
             // Toggle necessary body and navbar classes
             $('body').find('#navbar-main').removeClass('navbar-fixed-bottom');
-            $('body').removeClass('navbar-bottom');
+            $('.footer').show();
         }
     };
     

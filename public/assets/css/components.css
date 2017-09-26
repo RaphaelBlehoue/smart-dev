@@ -10,7 +10,7 @@
  * ---------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------
  *
- *  # Components
+ *  # Global less file
  *
  *  Common less file with imports of plugins and pages
  *
@@ -346,12 +346,6 @@ a.badge,
   min-height: 44px;
   font-weight: 500;
 }
-.navigation > li > a .label,
-.navigation > li > a .badge {
-  -webkit-transition: background-color ease-in-out 0.15s, border-color ease-in-out 0.15s;
-  -o-transition: background-color ease-in-out 0.15s, border-color ease-in-out 0.15s;
-  transition: background-color ease-in-out 0.15s, border-color ease-in-out 0.15s;
-}
 .navigation > li.active > a,
 .navigation > li.active > a:hover,
 .navigation > li.active > a:focus {
@@ -363,8 +357,12 @@ a.badge,
 }
 .navigation > li.active > a .label,
 .navigation > li.active > a .badge {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: transparent;
   border-color: transparent;
+  color: #fff;
+  -webkit-transition: background-color ease-in-out 0.2s;
+  -o-transition: background-color ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
 }
 .navigation > li ul {
   list-style: none;
@@ -616,13 +614,6 @@ a.badge,
 .sidebar-fixed-expanded .content-wrapper {
   padding-left: 76px;
 }
-.sidebar-separate .sidebar-content {
-  padding-bottom: 0;
-}
-.sidebar-separate .sidebar-content .panel:last-child,
-.sidebar-separate .sidebar-content .sidebar-category:last-child {
-  margin-bottom: 0;
-}
 @media (min-width: 769px) {
   .sidebar-separate .sidebar-content {
     background-color: transparent;
@@ -712,8 +703,11 @@ a.badge,
   }
   .sidebar-xs .sidebar-main .navigation > li > a > span .label,
   .sidebar-xs .sidebar-main .navigation > li > a > span .badge {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: transparent;
     border-color: transparent;
+    color: #fff;
+    padding-left: 0;
+    padding-right: 0;
   }
   .sidebar-xs .sidebar-main .navigation > li > a > i {
     margin: 2px 0;
@@ -757,8 +751,6 @@ a.badge,
   }
   .sidebar-xs .sidebar-main .navigation > li > ul > li > a {
     padding-left: 20px;
-  }
-  .sidebar-xs .sidebar-main .navigation > li > ul > li > a:not(.has-ul) {
     padding-right: 20px;
   }
   .sidebar-xs .sidebar-main .navigation > li > ul > li > ul > li > a {
@@ -1089,6 +1081,10 @@ a.badge,
     right: 20px;
   }
 }
+.layout-boxed .page-header .breadcrumb-boxed {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 @media (min-width: 769px) {
   .layout-boxed .page-container,
   .layout-boxed .navbar .navbar-boxed,
@@ -1122,8 +1118,8 @@ a.badge,
 *
 *  Main footer styles, currently 1 version only
 *
-*  Version: 1.2
-*  Latest update: Jan 5, 2017
+*  Version: 1.1
+*  Latest update: Mar 10, 2016
 *
 * ---------------------------------------------------------------------------- */
 .footer {
@@ -1132,13 +1128,13 @@ a.badge,
   right: 20px;
   bottom: 30px;
 }
+.footer:not(.navbar-fixed-bottom) {
+  z-index: 1000;
+}
 .footer.navbar {
   left: 0;
   right: 0;
   bottom: 0;
-}
-.footer.navbar-fixed-bottom {
-  z-index: auto;
 }
 body[class*=navbar-bottom] .footer:not(.navbar) {
   display: none;
@@ -6840,6 +6836,9 @@ legend.alpaca-container-label {
 .AnyTime-dom-btn:hover {
   background-color: #f5f5f5;
 }
+.AnyTime-dom-btn-empty {
+  display: none;
+}
 .AnyTime-time,
 .AnyTime-hrs-am,
 .AnyTime-hrs-pm,
@@ -10535,9 +10534,6 @@ body.stop-scrolling {
 .sidebar .ui-datepicker {
   min-width: 0;
 }
-.no-border .ui-datepicker {
-  border-width: 0;
-}
 .ui-datepicker .ui-datepicker-header {
   position: relative;
 }
@@ -11605,10 +11601,6 @@ body.stop-scrolling {
 .navbar-bottom-xs .fab-menu-bottom-left.reached-bottom,
 .navbar-bottom-xs .fab-menu-bottom-right.reached-bottom {
   bottom: 82px;
-}
-.fab-menu-top-left,
-.fab-menu-bottom-left {
-  left: 20px;
 }
 .fab-menu-top-right,
 .fab-menu-bottom-right {
@@ -14197,15 +14189,11 @@ a.plupload_disabled:focus {
  * ---------------------------------------------------------------------------- */
 .dropzone {
   position: relative;
-  border: 2px dashed #ddd;
+  border: 3px dashed #eeeeee;
   min-height: 250px;
   border-radius: 2px;
-  background-color: #fff;
-  padding: 5px;
-}
-.panel .dropzone {
   background-color: #fcfcfc;
-  border-color: #eeeeee;
+  padding: 5px;
 }
 .dropzone.dz-clickable,
 .dropzone.dz-clickable .dz-message,
@@ -18054,91 +18042,6 @@ thead .htCollapseButton:after {
 }
 /* ------------------------------------------------------------------------------
  *
- *  # Blog layouts
- *
- *  Blog layouts with various blog layouts
- *
- *  Version: 1.0
- *  Latest update: Aug 1, 2016
- *
- * ---------------------------------------------------------------------------- */
-.blog-horizontal > .panel-body {
-  padding-bottom: 0;
-}
-.blog-horizontal .blog-title > a {
-  color: #333333;
-}
-.blog-horizontal .blog-title > .list-inline {
-  margin-top: 3px;
-}
-.blog-horizontal .thumb {
-  width: 100%;
-}
-@media (min-width: 769px) {
-  .blog-horizontal .thumb {
-    width: 45%;
-    float: left;
-    margin-right: 20px;
-    max-width: 400px;
-  }
-}
-.blog-horizontal-1 .thumb {
-  margin-bottom: 20px;
-}
-.blog-horizontal-1 .blog-preview {
-  margin-bottom: 10px;
-}
-.blog-horizontal-1 .panel-footer-transparent {
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-@media (min-width: 769px) {
-  .blog-horizontal-1 .thumb {
-    margin-bottom: 10px;
-  }
-}
-.blog-horizontal-2 .thumb {
-  margin-bottom: 20px;
-}
-.blog-horizontal-2 .blog-title {
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-.blog-horizontal-2 .blog-preview {
-  margin-bottom: 20px;
-}
-.blog-horizontal-3 .thumb,
-.blog-horizontal-3 .blog-preview {
-  margin-bottom: 20px;
-}
-.blog-horizontal-3 .blog-title {
-  margin-top: 2px;
-  margin-bottom: 0;
-}
-.blog-horizontal-3 .blog-preview .list-inline,
-.blog-horizontal-3 .blog-preview .list-inline > li > a {
-  color: #999999;
-}
-@media (min-width: 769px) {
-  .blog-horizontal-xs .thumb {
-    width: 35%;
-    max-width: 200px;
-  }
-}
-@media (min-width: 769px) {
-  .blog-horizontal-sm .thumb {
-    width: 40%;
-    max-width: 300px;
-  }
-}
-@media (min-width: 769px) {
-  .blog-horizontal-lg .thumb {
-    width: 50%;
-    max-width: 500px;
-  }
-}
-/* ------------------------------------------------------------------------------
- *
  *  # Task manager
  *
  *  Styles related to task manager - detailed task, list and grid
@@ -18378,7 +18281,7 @@ thead .htCollapseButton:after {
  *
  * ---------------------------------------------------------------------------- */
 .login-cover {
-  background: url('../images/login_cover.jpg') no-repeat;
+  background: url('../images/login/bg1.jpg') no-repeat;
   background-size: cover;
 }
 .login-container .page-container {
@@ -18386,7 +18289,7 @@ thead .htCollapseButton:after {
   position: static;
 }
 .login-container .page-container .login-form {
-  width: 320px;
+  width: 380px;
 }
 .login-container .page-container .login-form .thumb {
   margin: 0 auto 20px auto;
@@ -19743,25 +19646,6 @@ label.display-block {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-.border-radius {
-  border-radius: 3px;
-}
-.border-radius-top {
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-}
-.border-radius-bottom {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.border-radius-left {
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-}
-.border-radius-right {
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-}
 .border-top {
   border-top: 1px solid;
 }
@@ -19875,174 +19759,4 @@ label.display-block {
 .progress-list > li span {
   float: right;
   display: block;
-}
-/* ------------------------------------------------------------------------------
-*
-*  # Mail list
-*
-*  Inbox page - list, read and write
-*
-*  Version: 1.0
-*  Latest update: Dev 5, 2016
-*
-* ---------------------------------------------------------------------------- */
-.table-inbox {
-  table-layout: fixed;
-}
-.table-inbox tr td {
-  cursor: pointer;
-  background-color: #fafafa;
-}
-.table-inbox tr td:not(:first-child) {
-  padding-left: 0;
-}
-.table-inbox tr.unread {
-  font-weight: 700;
-}
-.table-inbox tr.unread td {
-  background-color: #fff;
-}
-.table-inbox .table-inbox-checkbox {
-  width: 58px;
-}
-.table-inbox .table-inbox-star,
-.table-inbox .table-inbox-attachment {
-  width: 36px;
-}
-.table-inbox .table-inbox-image {
-  width: 52px;
-}
-.table-inbox .table-inbox-name {
-  width: 180px;
-}
-.table-inbox .table-inbox-message,
-.table-inbox .table-inbox-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.table-inbox .table-inbox-preview {
-  font-weight: normal;
-  color: #999999;
-}
-.table-inbox .table-inbox-time {
-  text-align: right;
-  width: 80px;
-}
-@media (max-width: 768px) {
-  .table-inbox {
-    min-width: 480px;
-  }
-  .table-inbox .table-inbox-message,
-  .table-inbox .table-inbox-name {
-    white-space: normal;
-  }
-  .table-inbox .table-inbox-subject {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .table-inbox .table-inbox-star,
-  .table-inbox .table-inbox-attachment,
-  .table-inbox .table-inbox-image {
-    display: none;
-  }
-}
-.mail-details-read {
-  margin: 0;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-}
-.mail-details-write {
-  margin: 0;
-  border-top: 1px solid #ddd;
-}
-.mail-details-write .control-label {
-  padding: 10px 20px;
-}
-.mail-details-write .form-control {
-  border-width: 0;
-  padding: 10px 20px;
-  border-radius: 0;
-  height: auto;
-}
-.mail-container-read {
-  max-width: 100%;
-  overflow: auto;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-}
-.mail-container-write {
-  border-top: 1px solid #ddd;
-}
-.mail-container-write .note-editor {
-  border-width: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-.mail-attachments-container {
-  padding: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #ddd;
-}
-.mail-attachments-heading {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.mail-attachments {
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  list-style: none;
-}
-.mail-attachments > li {
-  display: inline-block;
-  font-size: 13px;
-  padding: 15px 20px;
-  background-color: #fcfcfc;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  margin-top: 10px;
-  margin-right: 10px;
-}
-.mail-attachments .mail-attachments-preview {
-  display: inline-block;
-  float: left;
-}
-.mail-attachments .mail-attachments-preview > i {
-  top: 0;
-  margin-top: 4px;
-}
-.mail-attachments .mail-attachments-content {
-  margin-left: 47px;
-}
-/* ------------------------------------------------------------------------------
-*
-*  # Toolbars
-*
-*  Custom toolbars, mainly based on navbar component
-*
-*  Version: 1.0
-*  Latest update: Dec 5, 2016
-*
-* ---------------------------------------------------------------------------- */
-.panel-toolbar-inbox {
-  background-color: #fcfcfc;
-}
-.panel > .panel-toolbar-inbox:first-child {
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-}
-.panel-toolbar-inbox > .navbar {
-  background-color: transparent;
-  border-width: 0;
-}
-.panel-toolbar-inbox > .navbar-default .btn-default {
-  background-color: #fff;
-}
-@media (min-width: 769px) {
-  .panel-toolbar-inbox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
 }

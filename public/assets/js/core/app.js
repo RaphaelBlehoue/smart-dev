@@ -111,20 +111,6 @@ $(function() {
 
 
 
-    // Drill down menu
-    // ------------------------------
-
-    // If menu has child levels, add selector class
-    $('.menu-list').find('li').has('ul').parents('.menu-list').addClass('has-children');
-
-    // Attach drill down menu to menu list with child levels
-    $('.has-children').dcDrilldown({
-        defaultText: 'Back to parent',
-        saveState: true
-    });
-
-
-
 
     // ========================================
     //
@@ -572,10 +558,6 @@ $(function() {
                 // Place right sidebar before content
                 $('.sidebar-opposite').prependTo('.page-content');
 
-                // Remove nicescroll on mobiles
-                $('.menu-list').getNiceScroll().remove();
-                $(".menu-list").removeAttr('style').removeAttr('tabindex');
-
                 // Add mouse events for dropdown submenus
                 $('.dropdown-submenu').on('mouseenter', function() {
                     $(this).children('.dropdown-menu').addClass('show');
@@ -593,17 +575,6 @@ $(function() {
 
                 // Remove all mobile sidebar classes
                 $('body').removeClass('sidebar-mobile-main sidebar-mobile-secondary sidebar-mobile-opposite');
-
-                // Initialize nicescroll on tablets+
-                $(".menu-list").niceScroll({
-                    mousescrollstep: 100,
-                    cursorcolor: '#ccc',
-                    cursorborder: '',
-                    cursorwidth: 3,
-                    hidecursordelay: 200,
-                    autohidemode: 'scroll',
-                    railpadding: { right: 0.5 }
-                });
 
                 // Remove visibility of heading elements on desktop
                 $('.page-header-content, .panel-heading, .panel-footer').removeClass('has-visible-elements');

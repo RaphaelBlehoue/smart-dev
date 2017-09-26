@@ -3,8 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import  configureStore from './stores/configureStore';
-import App from './components/App';
+import  configureStore from './Stores/ConfigureStore';
+import App from './Components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
