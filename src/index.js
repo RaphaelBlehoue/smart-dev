@@ -7,7 +7,7 @@ import  configureStore from './Stores/ConfigureStore';
 import App from './Components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = configureStore();
+const store = configureStore;
 
 render(
     <BrowserRouter>

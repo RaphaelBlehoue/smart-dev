@@ -1,25 +1,27 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { Field , reduxForm } from 'redux-form';
 import renderField from '../../Utils/renderField';
-
+import { SignInUser } from "../../Actions/UserActions";
 
 // Client-side validation informations
 const validate = data => {
-  const errors = {};
+    const errors = {};
     if(!data.username) errors.username = "Entrez votre email ou numéro de téléphone pour vous connecter";
     if(!data.password) errors.password = "Le Mot de passe ne doit pas etre vide";
     return errors;
 };
 
+class SignInFormContainer extends Component {
 
-const OnSubmitted = (values) => {
-  console.log(values);
-};
+    handleFormSignInAndValidate = (values) => {
+        this.props.SignInUser(values);
+    };
 
-
-const SignInForm = ({ handleSubmit }) => (
-            <form onSubmit={handleSubmit(OnSubmitted)}>
+    render() {
+        const { handleSubmit, submitting } = this.props;
+        return (
+            <form onSubmit={handleSubmit(this.handleFormSignInAndValidate)}>
                 <div className="panel panel-body login-form">
                     <div className="text-center">
                         <div>
@@ -58,7 +60,7 @@ const SignInForm = ({ handleSubmit }) => (
                         </div>
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn bg-blue btn-block">
+                        <button type="submit" className="btn bg-blue btn-block" disabled={submitting}>
                             Se connecter <i className="icon-circle-left2 position-right"/>
                         </button>
                     </div>
@@ -66,13 +68,11 @@ const SignInForm = ({ handleSubmit }) => (
                     <span className="help-block text-center no-margin">{"By continuing, you're confirming that you've read our"} <a> {"Terms & Conditions"}</a> and <a>Cookie Policy</a></span>
                 </div>
             </form>
-);
+        );
+    }
+}
 
-SignInForm.propTypes = {
-    handleSubmit: PropTypes.func.isRequired
-};
-
-export default reduxForm({
+export default connect(null, {SignInUser})(reduxForm({
     form: 'SignInValidation',
     validate
-})(SignInForm);
+})(SignInFormContainer));

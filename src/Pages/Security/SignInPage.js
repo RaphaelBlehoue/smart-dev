@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import $ from 'jquery/dist/jquery.min';
 import SecurityLayout from '../../Components/Layouts/SecurityLayout';
-import SignInForm from '../../Components/Security/SignInForm';
+import SignInFormContainer from '../../Containers/Security/SignInFormContainer';
 
 class SignInPage extends Component {
 
@@ -19,7 +19,7 @@ class SignInPage extends Component {
         return (
             <div>
                 <SecurityLayout>
-                    <SignInForm />
+                    <SignInFormContainer/>
                 </SecurityLayout>
             </div>
         );

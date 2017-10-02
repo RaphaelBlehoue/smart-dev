@@ -28,7 +28,6 @@
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-form": "^7.0.4",
-    "redux-promise": "^0.5.3",
     "redux-promise-middleware": "^4.4.1",
     "redux-thunk": "^2.2.0",
     "select2": "^4.0.3"
